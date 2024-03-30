@@ -61,6 +61,17 @@ def get_all_albums():
 # def delete_item(item_id: int, item: Item):
 #     return {"action": "deleted", "item_id": item_id}
 
-# @app.patch("/items/{item_id}")
-# def patch_item(item_id: int, item: Item):
-#     return {"action": "patch", "item_id": item_id}
+@app.patch("/items/{item_id}")
+def patch_item(item_id: int, item: Item):
+   return {"action": "patch", "item_id": item_id}
+
+
+@app.get("/example_data")   
+def get_example_data():
+    # Just an example list of dictionaries
+    example_data = [
+        {"id": 1, "data": "Example 1"},
+        {"id": 2, "data": "Example 2"},
+        {"id": 3, "data": "Example 3"},
+    ]
+    return example_data
